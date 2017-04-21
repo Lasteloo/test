@@ -65,8 +65,9 @@
 * Test-cases
 ** Layout
 *** Normal
+test
 *** Mobile
-Make sure that mobile layout appears for the browser window width less than 1024px (or not px -- clarify)
+    Make sure that mobile layout appears for the browser window width less than 1024px (or not px -- clarify)
 ** Common webjet appearance and behaviors
 *** Show the menu
 - The menu should appear after clicking/tapping on the webjet's header icon
