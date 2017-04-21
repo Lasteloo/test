@@ -118,6 +118,7 @@ Updated: Mon DD YYYY HH:MM AM/PM
 **** Check that changes are in place after app reload
 *** Resize
 *** Lock
+test2
 *** Drag
 *** Alt+Drag
 *** Keyboard shortcuts
