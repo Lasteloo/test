@@ -1,0 +1,255 @@
+#######################################################
+##                                                   ##
+##     Webjets web app - global set of test cases    ##
+##     Emacs Org-mode file                           ##
+##                                                   ##
+#######################################################
+
+#+TODO: TODO IN_PROGRESS QUESTION | DONE
+
+* Initial layout of webjets before testing
+** IN_PROGRESS System navigator
+*** List "Top-level list"
+**** Card "Card one"
+**** List "List one"
+**** Collection "Collection one"
+**** Canvas "Canvas one"
+**** Mindmap "Mindmap one"
+**** Page "Page one"
+**** Table "Table one"
+**** Navigator "Navigator one"
+**** Channel "Channel one"
+**** Youtube portal
+**** Facebook portal
+**** Instagram portal
+**** Twitter portal
+**** Wikipedia portal
+**** JIRA portal
+**** Getting Started
+*** Card "Card two"
+*** List "List two"
+*** Collection "Collection two"
+*** Canvas "Canvas two"
+*** Mindmap "Mindmap two"
+*** Page "Page two"
+*** Table "Table two"
+*** Navigator "Navigator two"
+*** Channel "Channel two"
+*** Youtube portal
+*** Facebook portal
+*** Instagram portal
+*** Twitter portal
+*** Wikipedia portal
+*** JIRA portal
+*** Getting Started
+** IN PROGRESS Favorites
+*** Card "Favorite card"
+*** List "Favorite list"
+*** Collection "Favorite collection"
+*** Canvas "Favorite canvas"
+*** Mindmap "Favorite mindmap"
+*** Page "Favorite page"
+*** Table "Favorite table"
+*** Navigator "Favorite navigator"
+*** Channel "Favorite channel"
+*** Youtube portal
+*** Facebook portal
+*** Instagram portal
+*** Twitter portal
+*** Wikipedia portal
+*** JIRA portal
+*** Getting Started
+** TODO Inbox
+*** Inbox Note
+** Trash
+* Test-cases
+** Layout
+*** Normal
+*** Mobile
+Make sure that mobile layout appears for the browser window width less than 1024px (or not px -- clarify)
+** Common webjet appearance and behaviors
+*** Show the menu
+- The menu should appear after clicking/tapping on the webjet's header icon
+- The menu should appear after right-clicking on arbitrary point of the webjet's header
+- The menu should appear without delay, smoothly, with animated opacity
+**** Menu actions
+***** Remove
+- The action should be available only when the parent container isn't locked
+- The item is being removed from it's original position and placed to the top of the Trash side-panel
+- Trash side-panel size is limited with 20 items. When the Trash list exceeds that number, the oldest item should be removed from Trash
+***** Duplicate
+- The copy of the original webjet with all it's children is created
+- The original header/background colors are kept for the duplicate and all it's children
+- The new webjet (duplicate) is placed to the nearest unlocked Canvas/Mindmap/System navigator up the hierarchy from the original webjet
+- The duplicate proves to be independent from it's origin
+- The duplicate has relevant meta info
+***** IN_PROGRESS Clone
+- New view of the original webjet is created
+- The clone is placed to the nearest unlocked Canvas/Mindmap/System navigator up the hierarchy from the original webjet
+- The clone behaves as the reflection of the original webjet (clone and origin both prove to be reflections of one common webjet)
+***** Share
+***** Publish
+***** Remove
+***** Lock
+
+- The lock icon is displayed in the card's header.
+- The locked state behavior meets the the spec. for respective webjet type
+
+***** Duplicate
+***** Clone
+***** Publish
+***** Change Color
+**** Show meta-info
+
+Created: Mon DD YYYY HH:MM AM/PM
+Updated: Mon DD YYYY HH:MM AM/PM
+
+*** Fold/Unfold
+
+- The item unfolds to the height that is adequate to it's parent container type and size
+- The unfolded item gets to the top in the Z-axis (in Canvas, Mindmap)
+- The folded item frees the space it used to occupy and that space is being used by it's siblings (if applicable)
+
+*** Edit header
+- The text pasted to the header from the clipboard should be simplified to the plain text and shouldn't retain any formating from origin
+*** Edit content
+**** Basic editing
+**** Check that changes are in place after app reload
+*** Resize
+*** Lock
+*** Drag
+*** Alt+Drag
+*** Keyboard shortcuts
+**** Fold / Unfold
+**** Edit title
+Enter editing mode by pressing RET
+Quit editing mode by pressing ESC
+**** Create webjets
+**** Navigation
+The whole Webjets desktop should be navigatable with arrow keys
+(?) And the TAB key
+*** Navigation 
+** Type-specific
+*** Card
+**** Initial state
+- Dimensions
+**** Menu
+***** Lock
+**** Markdown rendering
+**** Resizing features
+- The card should be resizeable horizontally from it's min width () to arbitrary width
+**** Container functions
+The card should have the "Attachments area" in the bottom
+*** List (will be merged with the collection)
+**** Menu
+***** Zoom in
+***** Zoom out
+*** Collection
+**** Menu
+*** Canvas
+**** Menu
+**** Create new canvas
+***** Inside the card
+***** Inside the list
+***** Inside the collection
+***** Inside the canvas
+****** The color of new canvas should differ from the color of the parent Canvas/Mindmap
+***** Inside the mindmap
+****** The color of new canvas should differ from the color of the parent Canvas/Mindmap
+***** Inside the page
+***** Inside the table
+**** Scroll by dragging
+**** Narrow mode
+*** Mindmap
+**** Menu
+**** Connections
+- The menu with Remove action item should appear without delay after clicking or taping on the connection line
+**** Narrow mode
+*** Page :experimental:
+**** Menu
+*** Table
+**** Menu
+*** Navigator
+**** Menu
+*** Channel
+**** Menu
+*** INPROGRESS System navigator
+**** Menu
+**** DONE Adding new items
+***** Adding new tabs from the desktop contents
+****** Moving
+****** Cloning
+***** Adding new tabs from the Webjetory
+****** Moving
+****** Cloning
+***** Adding new tabs from the Favorites side panel
+****** Moving
+****** Cloning
+***** Adding new tabs from the Inbox side panel
+****** Moving
+****** Cloning
+***** Adding new tabs from the Trash side panel
+****** Moving
+****** Cloning
+**** DONE Switching between the items
+
+- The desktop view is switched to the selected item
+- Item has adequate "fullscreen" view
+- The URL is updated with the selected item ID
+
+**** DONE Refreshing the app
+
+- The item selected before the refresh remains selected and displayed in the desktop area
+
+**** DONE Rearranging the items
+
+- The items are being rearranged correctly and smoothly
+- The autoscrolling happens when the item is dragged towards the top/bottom of the area
+
+**** DONE Folding/unfolding the items (if applicable)
+**** Dragging the items away from the tab-bar
+***** Moving
+***** Cloning
+**** Performing menu actions on items
+
+- See menu actions (common and type-specific)
+
+*** Side-panels
+**** Webjetory
+**** Favorites
+***** Rearranging the items
+
+- The items are being rearranged correctly and smoothly
+- The autoscrolling happens when the item is dragged towards the top/bottom of the area
+
+**** Inbox
+**** Trash
+**** Profile
+***** Theme switching
+***** Experimental switches should enable/disable respective features
+***** Change password
+*** Portals
+***** Google
+***** Youtube
+***** Facebook
+***** Instagram
+***** Jira
+** Templates
+** Integrations
+*** Webhook
+*** Bookmarklet
+*** JIRA
+*** Confluence
+** Different resolutions test-cases
+*** Hi-Res
+*** Mid-Res
+*** Small/Mobile
+** Sharing
+** Special cases
+*** Autoscrolling in the system navigator
+*** Autoscrolling in the right side-bar
+** Unsorted
+- Adequate appearance and behavior for different zoom factors
+- Check update results after app reload
+- Check password reset (needs spec)
+** Touch-screen
